@@ -1,0 +1,54 @@
+#!/bin/bash
+
+DAQ=$1
+
+if [ $# != 1 ]
+then
+    echo "Please Power reboot one module at a time"
+    exit
+fi
+
+
+PingIP()
+{
+    echo "Checking if IP Power strip is connected ..."
+    IP=192.168.0.$1
+    ping -c 1 $IP > /dev/null
+    STATUS=$?
+    if [ $STATUS -eq 0 ]
+    then
+	echo "IP Power strip is Connected."
+    else
+	echo "IP Power strip is NOT Connected."
+	exit
+    fi
+}
+
+ResetPower()
+{
+    if [ $DAQ == 21 ] || [ $DAQ == 30 ] 
+    then
+	case "$DAQ" in
+	    "21") ARG1=1110
+		;;
+	    "30") ARG1=1101
+		;;
+	esac
+	ARG2=1111
+	PingIP 101
+	if [ -f /home/daq/NPDGamma/Diagnosis/daq_power_reset.sh ] 
+	then
+	    echo "Resetting the power of DAQ $DAQ ..."
+	    echo "It might take about 60 sec. Please wait ... ..."
+	    /home/daq/NPDGamma/Diagnosis/daq_power_reset.sh $ARG1 $ARG2 >> /dev/null
+	    sleep 60
+	    echo "Done resetting power of DAQ $DAQ"
+	else
+	    echo "Could NOT located required scrip"
+	fi
+    else
+	echo "Invalid DAQ module"
+    fi
+}
+
+ResetPower

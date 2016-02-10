@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NPDG_DAQ
+Comment=NPDG_DAQ
+Icon=/home/daq/NPDGamma/NPDG_DAQ/bin/NPDG_DAQ.jpg
+Exec=gnome-terminal --geometry=110x45+0+0 -t "NPDG_DAQ" -e "/home/daq/NPDGamma/NPDG_DAQ/bin/RunNPDG.sh"
+Terminal=false
+Type=Application
+Categories=Developer;Accessories;Accessibility;
+StartupNotify=true
+
+Name[en_US]=NPDG_DAQ

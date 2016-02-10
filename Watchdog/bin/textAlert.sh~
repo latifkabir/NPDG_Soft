@@ -1,0 +1,6 @@
+#!/bin/bash
+TXT=$1
+echo "                $TXT"
+#ssh basestar "echo $TXT | mutt 8659194107@txt.att.net,8653569698@txt.att.net,latifulkabir@uky.edu,8592133978@vmobl.com,8652130704@vtext.com, mgericke@physics.umanitoba.ca"
+# ssh basestar "echo $TXT | mutt latifulkabir@uky.edu"
+
