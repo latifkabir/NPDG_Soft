@@ -69,8 +69,8 @@ TTreeRaw::TTreeRaw(int runNumber):TTree("n3He", "n3He raw data")
 	if(offsetDaq21==0 || offsetDaq30 == 0)
 	{
 	    //offsetDaq21=offsetDaq22=offsetDaq23=offsetDaq24=offsetDaq30=0;
-	    offsetDaq21=offsetDaq30=0;
-	    cout<<"WARNING: You are using the library for a very old run number for which the library is NOT optimized."<<endl;
+	    offsetDaq21=4*9600; //Skip first 4 events: 50 samples/event x 4 events x 48 channels x 4 bytes/sample.
+	    offsetDaq30=4*13000; //Skip first 4 events: 1625 samples/event x 4 events x 2 channels x 4 bytes/sample.
 	}
 	else
 	{
