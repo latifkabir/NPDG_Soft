@@ -1,6 +1,5 @@
 #define DATA_PATH "/home/daq/DATA/"
 
-//#define DAQ21_LEAF "d21[48]/I"
 #define DAQ21_LEAF "h21[48]/I:d21[49][48]/I"
 #define DAQ22_LEAF "h22[48]/I:d22[49][48]/I"
 #define DAQ23_LEAF "h23[48]/I:d23[49][48]/I"

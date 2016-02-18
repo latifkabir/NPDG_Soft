@@ -1,4 +1,4 @@
-//The TTreeRaw Class that reads raw n3He data files in TTree format
+//The TTreeRaw Class that reads raw npdg data files in TTree format
 //Author: Latiful Kabir
 //Date: 12/25/14
 
@@ -20,7 +20,7 @@ ClassImp(TTreeRaw)
 //______________________________________________________________________
 int TTreeRaw::module[5]={21,22,23,24,30};
 
-TTreeRaw::TTreeRaw(int runNumber):TTree("n3He", "n3He raw data")
+TTreeRaw::TTreeRaw(int runNumber):TTree("npdg", "npdg raw data")
 {
 
     DaqLeaf=new TString[5];
